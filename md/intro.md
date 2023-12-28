@@ -156,27 +156,6 @@ $\frac{dP}{dr} = -\frac{(\rho + P)(m + Pr^3)}{r^2 - 2mr}$
 
 - Also, we will use a flag in this function to access the classical model if it is set to 0 else if it is set to 1 then it shall access the relativistic model.
 
-```py
-def dp_dr(r,m,p,flag):
-
-    '''
-    Pressure Gradient
-    r - distance from the center of neutron star
-    m - mass enclosed within the value of r
-    p - pressure at that value of r
-    flag - choose between classical and relativistic models
-    '''
-
-    if flag == 0:
-        # Classical Model
-        y = -m*rho(p)/(r**2 + 1e-20)
-
-    else:
-        # Relativistic Model
-        y = -(p+rho(p))*(m + p*r**3)/(r**2 - 2*m*r + 1e-20)
-
-    return y
-```
 
 #### **4) Calculating the Mass Gradient**      
 -  It calculates the change in mass enclosed within a radius r, with respect to the change in radius r, at a given pressure p.
