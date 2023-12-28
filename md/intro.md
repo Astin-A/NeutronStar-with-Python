@@ -266,49 +266,7 @@ print("Step size for RK4 Solver:", h)
 
 ## Modeling a Neutron Star <a name = 'h5'><a>
 
-```py
-'''Using RK4 Numerical Method for modeling a neutron star'''
-plt.figure(figsize = (18, 5))                                   # setting up the figure size for subplots
-for k in range(0,2):                                            # k will take two values in this run --> 0 and 1
-    flag = flag_set[k]                                          # flag_set[0] = 0, flag_set[1] = 1
-    for i in range(0,N-1):                                      # for 1500 iterations
-        if flag == 0:                                           # if the flag is set to 0
-            [m[i+1], p[i+1]] = RK4Solver(r[i],m[i],p[i],h,flag) # use classical model
-        else:                                                   # if not 0
-            [m[i+1], p[i+1]] = RK4Solver(r[i],m[i],p[i],h,flag) # use relativistic model
-        if p[i+1] < tol:                                        # if the value of the pressure goes below tolerance (close to 0 as we know)
-            break                                               # the simulation is completed
-    print()                                                     # for a new line between outputs
-    if i == N-2:                                                # if the pressure value was not able to go below the tolerance value
-        lbl1 = "Program didn't converge to P = 0, extend the maximum value of r" # print to increase the itetarations of simulation --> values of r
-    else:                                                       # if simulation stopped before this
-        lbl1 = f"P < {tol} found after {i} runs"                # print the conclusion statement
-
-    '''Keep only the used indices of array discarding the remaining ones'''
-    m = m[:i+2] # m[0:i+2 --> Exclusive index]
-    p = p[:i+2]
-    r = r[:i+2]
-
-    '''Time to visualise and print the results'''
-    if flag == 0:
-        lbl = "Classical Model"
-        plot_data('tab:orange', "Classical Model")
-    else:
-        lbl = "Relativistic Model"
-        plot_data('tab:cyan', "Relativistic Model")
-
-    '''Printing the overall output'''
-    print ("==================================================================")
-    print (lbl, "Results:", lbl1)
-    print ("==================================================================")
-    print ("Initial density, rho_s = ", rho_s, "MeV/fm^3")
-    print ("Total mass = ", m[-1]*M0/Ms, "times Solar mass")
-    print ("Radius of the Neutron star = ", r[-1]*R0*1e-18, "km")
-
-print()
-plt.subplots_adjust(wspace = 0.15)
-```
-<img src = 'imeges/plot1.jpg' width = 100%>
+<img src = 'imeges/plot.png' width = 100%>
 
 ## Conclusion <a name = 'h6'><a>
 - The values obtained for the mass and radius of the neutron star using the relativistic model are consistent with what is expected for a neutron star.
