@@ -214,31 +214,6 @@ $\frac{dm}{dr} = r^2\rho$
 
 - In order to ease the task of a neat plot, let's build one function!
 
-
-```py
-def plot_data(color, label):
-
-    # Mass Profile
-    plt.subplot(1, 2, 1)
-    plt.plot(r*R0*1e-18, m*M0/Ms, color = color, linewidth = 1.2, label = label)
-    plt.xlabel('Distance, $r$ (km)', fontsize = 13)
-    plt.ylabel('Mass, $M/M_{sun}$', fontsize = 13)
-    plt.title('Mass Profile of a Neutron Star', color = 'tab:red', weight = 'bold', fontsize = 15)
-    plt.xlim(left = 0)
-    plt.ylim(bottom = 0)
-    plt.legend(fontsize = 13, frameon = False)
-
-    # Pressure Profile
-    plt.subplot(1, 2, 2)
-    plt.plot(r*R0*1e-18, p*rho_s, color = color, linewidth = 1.2, label = label)
-    plt.xlabel('Distance, $r$ (km)', fontsize = 13)
-    plt.ylabel('Pressure, $P$ $(MeV/fm^{3})$', fontsize = 13)
-    plt.title('Pressure Profile of a Neutron Star', color = 'tab:red', weight = 'bold', fontsize = 15)
-    plt.xlim(left = 0)
-    plt.ylim(bottom = 0)
-    plt.legend(fontsize = 13, frameon = False)
-```
-
 ## Set all the Initial Values and Simulation Parameters <a name = 'h4'><a>
 - Remember that we have computed the above functions keeping in mind that we are using Planck system of units.
 
