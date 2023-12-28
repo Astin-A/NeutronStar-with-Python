@@ -126,20 +126,6 @@ def initial_n():
 
 This equation relates the energy density ($\rho$) to the number density (n) and neutron mass (mn). The function then returns the calculated energy density.
 
-```python
-def rho(p):
-
-    '''
-    Energy Density of a neutron star at a given pressure
-    rho_s - Central Density at r = 0
-    mn - mass of a neutron
-    n - number density at given pressure
-    '''
-
-    n = (p*rho_s/363.44)**(1/2.54)
-    return (236. * n**2.54 + n *mn)/rho_s
-```
-
 #### **3) Classical and Relativistic Models for calculating the Pressure Gradient**
 
 **Classical Model**         
