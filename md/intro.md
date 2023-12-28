@@ -1,11 +1,10 @@
 ## List of content
-**1)** [Introducing Neutron Stars](#h1)          
-**2)** [Problem Statement](#h2)        
-**3)** [Plank System of Units](#h3)           
-**4)** [Define useful functions](#h4)     
-**5)** [Setting up the Similation Parameters](#h5)    
-**6)** [Modeling a Neutron Star](#h6)         
-**7)** [Conclusions](#h7)       
+**1)** [Introducing Neutron Stars](#introducing-neutron-stars)        
+**2)** [Plank System of Units](#plank-system-units)           
+**3)** [Define useful functions](#h3)     
+**4)** [Setting up the Similation Parameters](#h4)    
+**5)** [Modeling a Neutron Star](#h5)         
+**6)** [Conclusions](#h6)       
 
 
 
@@ -28,7 +27,7 @@ Despite their small size, neutron stars can spin at an astonishing rate, sometim
 <img src = 'imeges/ghirlanda1HR-1200x742.jpg' width = 70%>
 
 
-We will be modeling a neutron star using the numerical method known as Runge-Kutta 4th order (RK4) on the Hydrostatic Equilibrium and TOV (Tolman-Oppenheimer-Volkoff) equations for the classical and relativistic model respectively. Don't worry if these fancy words are scarying you! Let's get a gist of each one of them.
+We will be modeling a neutron star using the numerical method known as Runge-Kutta 4th order (RK4) on the Hydrostatic Equilibrium and TOV (Tolman-Oppenheimer-Volkoff) equations for the classical and relativistic model respectively. 
 
 #### <mark>Runge-Kutta</mark>
 
@@ -54,7 +53,7 @@ We will be modeling a neutron star using the numerical method known as Runge-Kut
 
 - We shall glance over this topic a bit more to understand their equations when we will code it later in this notebook.
 
-## Plank System Units <a name = 'h3'><a>
+## Plank System Units <a name = 'h2'><a>
 
 - The Planck system of units is a system of natural units based on fundamental physical constants, such as the speed of light, Planck's constant, and the gravitational constant. In this system, these constants are set to the value of 1, which allows for easier and more meaningful comparison between different physical quantities.
 
@@ -65,7 +64,7 @@ We will be modeling a neutron star using the numerical method known as Runge-Kut
 - It is often used in theoretical physics and cosmology, particularly in areas related to quantum gravity and the study of the early universe.
 
 
-## Defining the Functions <a name = 'h4'><a>
+## Defining the Functions <a name = 'h3'><a>
 
 We shall now understand and build multiple functions that will be used in this project.
 
@@ -316,7 +315,7 @@ def plot_data(color, label):
     plt.legend(fontsize = 13, frameon = False)
 ```
 
-## Set all the Initial Values and Simulation Parameters <a name = 'h5'><a>
+## Set all the Initial Values and Simulation Parameters <a name = 'h4'><a>
 - Remember that we have computed the above functions keeping in mind that we are using Planck system of units.
 
 - Hence in order to visualise the results better, we have to convert them back to their physical units.
@@ -366,7 +365,7 @@ print("Step size for RK4 Solver:", h)
 
 
 
-## Modeling a Neutron Star <a name = 'h6'><a>
+## Modeling a Neutron Star <a name = 'h5'><a>
 
 ```py
 '''Using RK4 Numerical Method for modeling a neutron star'''
@@ -412,7 +411,7 @@ plt.subplots_adjust(wspace = 0.15)
 ```
 <img src = 'imeges/plot1.jpg' width = 100%>
 
-## Conclusion <a name = 'h7'><a>
+## Conclusion <a name = 'h6'><a>
 - The values obtained for the mass and radius of the neutron star using the relativistic model are consistent with what is expected for a neutron star.
 
 - However, the values you obtained using the classical model are not consistent with what is expected for a neutron star.
