@@ -4,4 +4,4 @@
 
 ## Workflow
 
-**1)** [Introducing](md/intro.md)
+**1)** [methodology](md/intro.md)
