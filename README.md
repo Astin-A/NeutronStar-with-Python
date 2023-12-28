@@ -4,4 +4,6 @@
 
 ## Workflow
 
-**1)** [methodology](md/intro.md)
+[methodology](md/intro.md)
+
+for usage run the [simulation](simulation.ipynb)
