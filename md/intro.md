@@ -165,16 +165,7 @@ $\frac{dP}{dr} = -\frac{(\rho + P)(m + Pr^3)}{r^2 - 2mr}$
 
 - Keeping in mind the Planck system units, this equation now becomes:        
 $\frac{dm}{dr} = r^2\rho$
-```py
-def dm_dr(r,m,p):
 
-    '''
-    Mass Gradient
-    Same r, m, p as we used for pressure gradient are to be used for mass gradient
-    '''
-
-    return rho(p)*r**2
-```
 **Reference:-**        
 - You can check [this material](https://www.ictp-saifr.org/schoolgr/Lecture2Creighton.pdf) to go through the idea of classical and relativistic equations for pressure and mass gradients.
 
