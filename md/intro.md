@@ -206,39 +206,7 @@ $\frac{dm}{dr} = r^2\rho$
 
 **Desmos output shown in the video can be accessed via [this link](https://www.desmos.com/calculator/2wnqyu4rur).**
 
-```py
-def RK4Solver(r,m,p,h,flag):
 
-    '''
-    Runge - Kutta 4th order Method
-    Calculates 4 different pressure and mass gradients
-    K1_ - Mass Gradients
-    K2_ - Pressure Gradients
-    '''
-    y = np.zeros(2)                                               # To store the next value of m and p
-
-    # Gradient 1 at start point
-    k11 = dm_dr(r, m, p)
-    k21 = dp_dr(r, m, p, flag)
-
-    # Gradient 2 at mid of start and end point
-    k12 = dm_dr(r + 0.5*h, m + 0.5*k11*h, p + 0.5*k21*h)
-    k22 = dp_dr(r + 0.5*h, m + 0.5*k11*h, p + 0.5*k21*h, flag)
-
-    # Gradient 3 at mid of start and end point
-    k13 = dm_dr(r + 0.5*h, m + 0.5*k12*h, p + 0.5*k22*h)
-    k23 = dp_dr(r + 0.5*h, m + 0.5*k12*h, p + 0.5*k22*h, flag)
-
-    # Gradient 4 at end point
-    k14 = dm_dr(r + h, m + k13*h, p + k23*h)
-    k24 = dp_dr(r + h, m + k13*h, p + k23*h, flag)
-
-    # Updation of m and p
-    y[0] = m + h*(k11 + 2*k12 + 2*k13 + k14)/6
-    y[1] = p + h*(k21 + 2*k22 + 2*k23 + k24)/6
-
-    return y
-```
 **Reference:-**      
 - Use [this material](https://www.haroldserrano.com/blog/visualizing-the-runge-kutta-method) to visualise the RK4 Method.
 
